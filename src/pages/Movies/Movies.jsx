@@ -1,4 +1,3 @@
-import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import css from './Movies.module.css';
