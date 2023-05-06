@@ -21,6 +21,7 @@ const MoviePage = () => {
         const response = await axios.get(
           `${BASE_URL}/movie/${id.movieId}?${KEY}`
         );
+
         const {
           original_title,
           release_date,
@@ -44,7 +45,7 @@ const MoviePage = () => {
     };
     fetch();
   }, []);
-  console.log(location);
+
   return (
     <div className={css.section}>
       <Link to={backLinkHref.current} className={css.back}>

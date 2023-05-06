@@ -38,6 +38,7 @@ const MovieCast = () => {
         setLoader(false);
       } catch {
         console.log('error');
+        setLoader(false);
       }
     };
     fetch();
