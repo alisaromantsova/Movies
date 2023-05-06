@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { MovieDetails } from 'components/MovieDetails/MovieDetails';
 import { Link, useParams, Outlet, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import css from './MoviePage.module.css';
 import { Audio } from 'react-loader-spinner';
 
@@ -12,7 +12,7 @@ const KEY = 'api_key=e777b5f5a1d00d3a4d56208d16e8e0e4';
 
 const MoviePage = () => {
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/';
+  const backLinkHref = useRef(location.state?.from ?? '/');
   const id = useParams();
   const [film, setFilm] = useState({});
   useEffect(() => {
@@ -44,10 +44,10 @@ const MoviePage = () => {
     };
     fetch();
   }, []);
-
+  console.log(location);
   return (
     <div className={css.section}>
-      <Link to={backLinkHref} className={css.back}>
+      <Link to={backLinkHref.current} className={css.back}>
         Go back
       </Link>
       <MovieDetails film={film} />

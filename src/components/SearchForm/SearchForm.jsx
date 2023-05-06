@@ -4,16 +4,15 @@ import { useState } from 'react';
 
 export const SearchForm = ({ setFormValue }) => {
   const [searchParams, setSearchParams] = useSearchParams();
-  //   const [submitValue, setSubmitValue] = useState('');
+
   const [changingValue, setChangingValue] = useState(
-    searchParams.get('search')
+    searchParams.get('search') ?? ''
   );
   const handlerSubmit = e => {
     e.preventDefault();
     if (e.target[0].value.trim()) {
       setSearchParams({ search: e.target[0].value.trim() });
       setFormValue(e.target[0].value.trim());
-      //   setSubmitValue(e.target[0].value.trim());
     } else {
       setSearchParams({});
     }

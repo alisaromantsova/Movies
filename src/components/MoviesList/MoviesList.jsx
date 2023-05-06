@@ -4,9 +4,10 @@ export const MoviesList = ({ movies }) => {
   return (
     <ul className={css.list}>
       {movies.map(movie => {
-        const { id, movieName, date, img } = movie;
+        const { id, name, date, img } = movie;
+
         return (
-          <MovielistCard id={id} movieName={movieName} date={date} img={img} />
+          <MovielistCard key={id} id={id} name={name} date={date} img={img} />
         );
       })}
     </ul>

@@ -4,16 +4,24 @@ import css from './Movies.module.css';
 import { Audio } from 'react-loader-spinner';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { SearchForm } from 'components/SearchForm/SearchForm';
+import { useSearchParams } from 'react-router-dom';
 
 const BASE_URL = 'https://api.themoviedb.org/3/search/movie';
 const KEY = 'api_key=e777b5f5a1d00d3a4d56208d16e8e0e4';
 
 const Movies = () => {
   const [formValue, setFormValue] = useState('');
+  const [searchParams] = useSearchParams();
 
   const [movies, setMovies] = useState(null);
 
   const [loader, setLoader] = useState(false);
+  useEffect(() => {
+    if (searchParams.get('search')) {
+      setFormValue(searchParams.get('search'));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   useEffect(() => {
     const fetch = async () => {
       setLoader(true);
@@ -44,7 +52,7 @@ const Movies = () => {
       setMovies(null);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [formValue]);
+  }, [formValue, searchParams]);
 
   return (
     <div className={css.section}>

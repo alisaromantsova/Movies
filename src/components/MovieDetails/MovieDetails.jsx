@@ -14,14 +14,14 @@ export const MovieDetails = ({ film }) => {
             {name}({date})
           </h2>
         ) : (
-          'Not found'
+          <h2 className={css.title}> Not found</h2>
         )}
         {rating ? (
           <p className={css.ratingP}>
             Rating: <span className={css.ratingSpan}>{rating}</span>
           </p>
         ) : (
-          <p>Rating: Not found</p>
+          <p className={css.ratingP}>Rating: Not found</p>
         )}
         <div className={css.genres}>
           <h3 className={css.ratingP}>Genres:</h3>
@@ -33,7 +33,11 @@ export const MovieDetails = ({ film }) => {
           </ul>
         </div>
         <h3 className={css.overviewTitle}>Overview</h3>
-        {overview ? <p className={css.overview}>{overview}</p> : 'Not found'}
+        {overview ? (
+          <p className={css.overview}>{overview}</p>
+        ) : (
+          <p className={css.overview}>Not found</p>
+        )}
         <ul className={css.buttons}>
           <li>
             <NavLink className={css.castLink} to="cast">
