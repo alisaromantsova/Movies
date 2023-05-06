@@ -1,12 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Suspense } from 'react';
-import {
-  Link,
-  NavLink,
-  useParams,
-  Outlet,
-  useLocation,
-} from 'react-router-dom';
+import { MovieDetails } from 'components/MovieDetails/MovieDetails';
+import { Link, useParams, Outlet, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import css from './MoviePage.module.css';
@@ -14,7 +9,6 @@ import { Audio } from 'react-loader-spinner';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const KEY = 'api_key=e777b5f5a1d00d3a4d56208d16e8e0e4';
-const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 const MoviePage = () => {
   const location = useLocation();
@@ -50,55 +44,13 @@ const MoviePage = () => {
     };
     fetch();
   }, []);
-  const { img, name, date, rating, overview, genres } = film;
+
   return (
     <div className={css.section}>
       <Link to={backLinkHref} className={css.back}>
         Go back
       </Link>
-      <div className={css.div}>
-        {img && <img height="500px" src={`${IMG_URL}${img}`} alt="" />}
-        <div className={css.textContainer}>
-          {name ? (
-            <h2 className={css.title}>
-              {name}({date})
-            </h2>
-          ) : (
-            'Not found'
-          )}
-          {rating ? (
-            <p className={css.ratingP}>
-              Rating: <span className={css.ratingSpan}>{rating}</span>
-            </p>
-          ) : (
-            <p>Rating: Not found</p>
-          )}
-          <div className={css.genres}>
-            <h3 className={css.ratingP}>Genres:</h3>
-            <ul className={css.list}>
-              {genres &&
-                genres.map(genre => {
-                  return <li key={genre.id}>{genre.name}</li>;
-                })}
-            </ul>
-          </div>
-          <h3 className={css.overviewTitle}>Overview</h3>
-          {overview ? <p className={css.overview}>{overview}</p> : 'Not found'}
-          <ul className={css.buttons}>
-            <li>
-              <NavLink className={css.castLink} to="cast">
-                Cast
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className={css.castLink} to="reviews">
-                Review
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div></div>
+      <MovieDetails film={film} />
 
       <Suspense
         fallback={

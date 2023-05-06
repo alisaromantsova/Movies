@@ -1,17 +1,18 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import css from './Home.module.css';
 import { Audio } from 'react-loader-spinner';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const KEY = 'api_key=e777b5f5a1d00d3a4d56208d16e8e0e4';
-const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
   const [loader, setLoader] = useState(false);
   useEffect(() => {
+    setLoader(true);
     const fetch = async () => {
       setLoader(true);
       try {
@@ -49,39 +50,7 @@ const Home = () => {
           margin="auto"
         />
       )}
-
-      <ul className={css.list}>
-        {movies.map(movie => (
-          <li className={css.moviesLi} key={movie.id}>
-            <Link to={`/movies/${movie.id}`} state={{ from: '/' }}>
-              {movie.img ? (
-                <img
-                  src={`${IMG_URL}${movie.img} `}
-                  alt={movie.name || ''}
-                  height="411px"
-                />
-              ) : (
-                <div
-                  style={{
-                    width: '100px',
-                    height: '150px',
-                    border: '#000 solid 1px',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
-                  <p>Not found</p>
-                </div>
-              )}
-              <div className={css.text}>
-                <p className={css.name}>{movie.name}</p>
-                <p className={css.year}>{movie.date}</p>
-              </div>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <MoviesList movies={movies} />
     </section>
   );
 };

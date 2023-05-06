@@ -2,78 +2,7 @@
   padding-top: 60px;
   padding-bottom: 60px;
 }
-.title {
-  font-size: 30px;
-  line-height: 35px;
-  text-transform: uppercase;
-  color: #000000;
-  margin-bottom: 20px;
-}
-.div {
-  display: flex;
-}
-.textContainer {
-  margin: 30px;
-}
-.ratingP {
-  font-size: 12px;
-  line-height: 16px;
-  color: #8c8c8c;
-  display: flex;
-  gap: 40px;
-  margin-bottom: 10px;
-}
-.ratingSpan {
-  display: block;
-  padding: 5px;
-  font-size: 12px;
-  line-height: 14px;
-  background: #ff6b01;
-  color: #ffffff;
-  border-radius: 5px;
-}
-.genres {
-  display: flex;
-  gap: 35px;
-}
-.list {
-  font-size: 12px;
-  line-height: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
 
-  color: #000000;
-}
-.overviewTitle {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 12px;
-  line-height: 16px;
-  text-transform: uppercase;
-
-  color: #000000;
-}
-.overview {
-  font-size: 12px;
-  line-height: 20px;
-  margin-bottom: 30px;
-  color: #000000;
-}
-.buttons {
-  display: flex;
-  gap: 20px;
-}
-.castLink {
-  padding: 10px 16px;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  font-size: 12px;
-  line-height: 16px;
-  text-transform: uppercase;
-
-  color: #000000;
-}
 .back {
   margin-bottom: 30px;
   padding: 10px;

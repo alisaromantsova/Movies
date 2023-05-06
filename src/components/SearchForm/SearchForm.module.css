@@ -1,0 +1,25 @@
+.input {
+  height: 44px;
+  width: 300px;
+  padding: 8px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+.button {
+  height: 44px;
+  background: #ff6b01;
+  border-radius: 5px;
+  padding: 14px 10px;
+  border: none;
+  font-size: 12px;
+  line-height: 16px;
+
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+.form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
