@@ -1,0 +1,47 @@
+.header {
+  background-image: url('../../img/Rectangle.png');
+  height: 150px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.logo {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  color: #ffffff;
+}
+.nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.home,
+.movies {
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  color: #ffffff;
+}
+.active {
+  color: red;
+}
+.footerTitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #545454;
+  gap: 5px;
+}
+.footer {
+  background: #f7f7f7;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.link {
+  display: block;
+  text-decoration-line: underline;
+  padding: 12px 24px;
+}
