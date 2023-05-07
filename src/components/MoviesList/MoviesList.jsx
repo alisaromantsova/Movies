@@ -1,5 +1,5 @@
 import { MovielistCard } from 'components/MovieListCard/MovieListCard';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import css from './MoviesList.module.css';
 export const MoviesList = ({ movies }) => {
   return (
@@ -15,10 +15,10 @@ export const MoviesList = ({ movies }) => {
   );
 };
 
-MoviesList.propTypes = {
-  movies: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    }).isRequired
-  ).isRequired,
-};
+// MoviesList.propTypes = {
+//   movies: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.number.isRequired,
+//     }).isRequired
+//   ).isRequired,
+// };

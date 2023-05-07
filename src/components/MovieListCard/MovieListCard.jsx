@@ -1,5 +1,5 @@
 import css from './MovielistCard.module.css';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -32,9 +32,9 @@ export const MovielistCard = ({ id, img, name, date }) => {
     </li>
   );
 };
-MovielistCard.propTypes = {
-  id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
-};
+// MovielistCard.propTypes = {
+//   id: PropTypes.number.isRequired,
+//   name: PropTypes.string.isRequired,
+//   date: PropTypes.string.isRequired,
+//   img: PropTypes.string.isRequired,
+// };

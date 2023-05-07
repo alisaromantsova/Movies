@@ -1,5 +1,5 @@
 import css from './SearchForm.module.css';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useSearchParams } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -38,6 +38,6 @@ export const SearchForm = ({ setFormValue }) => {
     </form>
   );
 };
-SearchForm.propTypes = {
-  setFormValue: PropTypes.func.isRequired,
-};
+// SearchForm.propTypes = {
+//   setFormValue: PropTypes.func.isRequired,
+// };

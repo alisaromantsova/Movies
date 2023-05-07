@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 import css from './MoviePage.module.css';
 import { Audio } from 'react-loader-spinner';
+import { NotFound } from 'components/NotFound/NotFound';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const KEY = 'api_key=e777b5f5a1d00d3a4d56208d16e8e0e4';
@@ -14,7 +15,7 @@ const MoviePage = () => {
   const location = useLocation();
   const backLinkHref = useRef(location.state?.from ?? '/');
   const id = useParams();
-  const [film, setFilm] = useState({});
+  const [film, setFilm] = useState('');
   useEffect(() => {
     const fetch = async () => {
       try {
@@ -32,10 +33,10 @@ const MoviePage = () => {
         } = response.data;
         const obj = {
           name: original_title,
-          date: release_date.slice(0, 4) || 'Not found',
-          img: poster_path || '',
-          rating: vote_average.toFixed(2) || 'Not found',
-          overview: overview || 'Not found',
+          date: release_date.slice(0, 4),
+          img: poster_path,
+          rating: vote_average.toFixed(2),
+          overview: overview,
           genres: genres,
         };
         setFilm(obj);
@@ -45,14 +46,14 @@ const MoviePage = () => {
     };
     fetch();
   }, []);
-
+  console.log(film);
   return (
     <div className={css.section}>
       <Link to={backLinkHref.current} className={css.back}>
         Go back
       </Link>
-      <MovieDetails film={film} />
-
+      {film && <MovieDetails film={film} />}
+      {!film && <NotFound />}
       <Suspense
         fallback={
           <Audio

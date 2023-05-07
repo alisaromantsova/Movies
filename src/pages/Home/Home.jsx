@@ -16,7 +16,9 @@ const Home = () => {
     const fetch = async () => {
       setLoader(true);
       try {
-        const response = await axios.get(`${BASE_URL}/trending/all/day?${KEY}`);
+        const response = await axios.get(
+          `${BASE_URL}/trending/movie/day?${KEY}`
+        );
 
         const filmNames = response.data.results.map(film => {
           const { title, name, id, poster_path, release_date } = film;

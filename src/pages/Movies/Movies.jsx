@@ -27,7 +27,7 @@ const Movies = () => {
       setLoader(true);
       try {
         const response = await axios.get(
-          `${BASE_URL}?${KEY}&query=${formValue}`
+          `${BASE_URL}?${KEY}&query=${formValue}&language=en-US&include_adult=false`
         );
 
         const filmNames = response.data.results.map(film => {
