@@ -32,10 +32,10 @@ const MoviePage = () => {
         } = response.data;
         const obj = {
           name: original_title,
-          date: release_date.slice(0, 4),
-          img: poster_path,
-          rating: vote_average.toFixed(2),
-          overview: overview,
+          date: release_date.slice(0, 4) || 'Not found',
+          img: poster_path || '',
+          rating: vote_average.toFixed(2) || 'Not found',
+          overview: overview || 'Not found',
           genres: genres,
         };
         setFilm(obj);
