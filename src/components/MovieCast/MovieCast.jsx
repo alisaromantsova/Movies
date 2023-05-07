@@ -37,8 +37,9 @@ const MovieCast = () => {
         setActors(actorsArrey);
         setLoader(false);
       } catch {
-        console.log('error');
         setLoader(false);
+        console.log('error');
+        
       }
     };
     fetch();
