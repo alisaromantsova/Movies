@@ -52,8 +52,8 @@ main {
   margin: 0 auto;
   max-width: 1024px;
   padding: 0 15px;
-  @media screen and (min-width: 470px) {
-    padding: 0 71px;
+  @media screen and (min-width: 550px) {
+    padding: 0 70px;
   }
 }
 .active {

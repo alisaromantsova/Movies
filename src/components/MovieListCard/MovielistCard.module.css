@@ -1,5 +1,11 @@
 .moviesLi {
-  width: 274px;
+  width: 100%;
+  @media screen and (min-width: 420px) {
+    width: 180px;
+  }
+  @media screen and (min-width: 910px) {
+    width: 274px;
+  }
 }
 .name {
   margin-left: 10px;

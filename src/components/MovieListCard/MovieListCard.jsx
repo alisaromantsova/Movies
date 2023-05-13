@@ -9,7 +9,7 @@ export const MovielistCard = ({ id, img, name, date }) => {
     <li className={css.moviesLi}>
       <Link to={`/movies/${id}`} state={{ from: location }}>
         {img ? (
-          <img src={`${IMG_URL}${img} `} alt={name || ''} height="411px" />
+          <img src={`${IMG_URL}${img} `} alt={name || ''} />
         ) : (
           <div
             style={{
