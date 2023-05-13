@@ -7,7 +7,7 @@ export const SharedLayout = () => {
   return (
     <>
       <header className={css.header}>
-        <div className="container">
+        <div className={css.container}>
           <nav className={css.nav}>
             <Link className={css.logo} to="/">
               Filmoteka
