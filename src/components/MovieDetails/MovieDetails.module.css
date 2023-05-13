@@ -6,7 +6,9 @@
   margin-bottom: 20px;
 }
 .div {
-  display: flex;
+  @media screen and (min-width: 470px) {
+    display: flex;
+  }
 }
 .textContainer {
   margin: 30px;
@@ -69,4 +71,10 @@
   text-transform: uppercase;
 
   color: #000000;
+}
+.img {
+  width: 100%;
+  @media screen and (min-width: 470px) {
+    width: 50%;
+  }
 }

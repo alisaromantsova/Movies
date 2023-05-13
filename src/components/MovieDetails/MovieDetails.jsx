@@ -7,7 +7,7 @@ export const MovieDetails = ({ film }) => {
   const { img, name, date, rating, overview, genres } = film;
   return (
     <div className={css.div}>
-      {img && <img height="500px" src={`${IMG_URL}${img}`} alt="" />}
+      {img && <img className={css.img} src={`${IMG_URL}${img}`} alt="" />}
       <div className={css.textContainer}>
         {name ? (
           <h2 className={css.title}>
